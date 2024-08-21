@@ -1,5 +1,5 @@
 import express from "express";
-import { 
+import {
     createUser, 
     loginUser, 
     logoutCurrentUser,
@@ -12,10 +12,11 @@ import {
 } from "../controllers/userController.js";
 
 import { authenticate, authorizeAdmin } from "../middlewares/authMiddleware.js";
+import cacheMiddleware from '../middlewares/cacheMiddleware.js';
 
 const router = express.Router();
 
-router.route('/').post(createUser).get(authenticate, authorizeAdmin, getAllUsers);
+router.route('/').post(createUser).get(authenticate, authorizeAdmin, cacheMiddleware, getAllUsers);
 router.post('/auth', loginUser);
 router.post('/logout', logoutCurrentUser);
 
@@ -23,7 +24,6 @@ router.route('/profile')
       .get(authenticate, getCurrentUserProfile)
       .put(authenticate, updateCurrentUserProfile);
 
-//RUTAS DEL ADMIN
 router.route('/:id')
       .delete(authenticate, authorizeAdmin, deleteUserById)
       .get(authenticate, authorizeAdmin, getUserById)
