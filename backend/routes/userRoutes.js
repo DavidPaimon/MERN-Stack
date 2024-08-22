@@ -16,17 +16,22 @@ import cacheMiddleware from '../middlewares/cacheMiddleware.js';
 
 const router = express.Router();
 
-router.route('/').post(createUser).get(authenticate, authorizeAdmin, cacheMiddleware, getAllUsers);
+router
+  .route('/')
+  .post(createUser)
+  .get(authenticate, authorizeAdmin, cacheMiddleware, getAllUsers);
+
 router.post('/auth', loginUser);
 router.post('/logout', logoutCurrentUser);
 
-router.route('/profile')
-      .get(authenticate, getCurrentUserProfile)
-      .put(authenticate, updateCurrentUserProfile);
+router
+  .route('/profile')
+  .get(authenticate, getCurrentUserProfile)
+  .put(authenticate, updateCurrentUserProfile);
 
 router.route('/:id')
-      .delete(authenticate, authorizeAdmin, deleteUserById)
-      .get(authenticate, authorizeAdmin, getUserById)
-      .put(authenticate, authorizeAdmin, updateUserById);
+  .delete(authenticate, authorizeAdmin, deleteUserById)
+  .get(authenticate, authorizeAdmin, getUserById)
+  .put(authenticate, authorizeAdmin, updateUserById);
 
 export default router;
