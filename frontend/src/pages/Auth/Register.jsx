@@ -29,6 +29,24 @@ const Register = () => {
             }
         }, [navigate, redirect, userInfo]);
 
+        const submitHandler = async (e) => {
+            e.preventDefault()
+
+            if (password != confirmPassword ) {
+                toast.error("Las contraseñas no coinciden.");
+            } else {
+                try {
+                    const res = await register({ username, email, password }).unwrap();
+                    dispatch(setCredientials({ ...res }));
+                    navigate(redirect)
+                    toast.success('Usuario registrado exitosamente.')
+                } catch (error) {
+                    console.log(error);
+                    toast.error(error.data.message);
+                }
+            }
+        };
+
     return (
     <section className="pl-[10rem] flex flex-wrap">
         <div className="mr-[4rem] mt-[5rem}">
@@ -104,14 +122,17 @@ const Register = () => {
         <div className="mt-4">
             <p className="text-white">
                 ¿Ya tienes una cuenta? {" "}
-                <Link to={redirect ? `/login/redirect=${redirect}` : '/login'} className="text-pink-500 hover:underline">
+                <Link to={redirect ? `/login?redirect=${redirect}` : '/login'} className="text-pink-500 hover:underline">
                   Inicia sesión
                 </Link>
-            </p>
-            
+            </p>   
         </div>
-
-        </div>
+    </div>
+    <img
+        src="https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
+        alt=""
+        className="h-[42rem] w-[46%] xl:block md:hidden sm:hidden rounded-lg"
+      />
     </section>
     )
 };

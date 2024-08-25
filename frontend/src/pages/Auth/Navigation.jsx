@@ -48,7 +48,7 @@ const Navigation = () => {
         } xl:flex lg:flex md:hidden sm:hidden flex-col justify-between p-4 text-white bg-[#000] w-[4%] hover:w-[15%] h-[100vh] fixed `}
         id="navigation-container"
      >
-        <div className="flex flex-col justify-center space-y-4">
+        <div className="flex flex-col justify-center space-y-1">
             
             <Link to='/' className="flex items-center transition-transform transform hover:translate-x-2"
             >
@@ -116,7 +116,7 @@ const Navigation = () => {
                           <li>
                             <Link
                              to='/admin/dashboard' 
-                             className="block px-4 py-2 hover:bg-gray-300"
+                             className="block px-4 py-1 hover:bg-gray-300"
                             >
                               Dashboard
                             </Link>
@@ -124,7 +124,7 @@ const Navigation = () => {
                           <li>
                             <Link
                              to='/admin/productlist' 
-                             className="block px-4 py-2 hover:bg-gray-300"
+                             className="block px-4 py-1 hover:bg-gray-300"
                             >
                               Products
                             </Link>
@@ -132,7 +132,7 @@ const Navigation = () => {
                           <li>
                             <Link
                              to='/admin/categorylist' 
-                             className="block px-4 py-2 hover:bg-gray-300"
+                             className="block px-4 py-1 hover:bg-gray-300"
                             >
                               Category
                             </Link>
@@ -140,7 +140,7 @@ const Navigation = () => {
                           <li>
                             <Link
                              to='/admin/orderlist' 
-                             className="block px-4 py-2 hover:bg-gray-300"
+                             className="block px-4 py-1 hover:bg-gray-300"
                             >
                               Orders
                             </Link>
@@ -148,7 +148,7 @@ const Navigation = () => {
                           <li>
                             <Link
                              to='/admin/userlist' 
-                             className="block px-4 py-2 hover:bg-gray-300"
+                             className="block px-4 py-1 hover:bg-gray-300"
                             >
                               Users
                             </Link>
@@ -158,8 +158,8 @@ const Navigation = () => {
 
                     <li>
                         <Link
-                         to='/admin/profile' 
-                         className="block px-4 py-2 hover:bg-gray-300"
+                         to='/profile' 
+                         className="block px-4 py-1 hover:bg-gray-300"
                         >
                           Profile
                         </Link>
@@ -168,7 +168,7 @@ const Navigation = () => {
                           <button
                             to='/admin/logout' 
                             onClick={logoutHandler}
-                            className="block px-4 py-2 hover:bg-gray-300"
+                            className="block px-4 py-1 hover:bg-gray-300"
                           >
                           Logout
                           </button>
