@@ -23,6 +23,27 @@ const Profile = () => {
     }, [userInfo.email, userInfo.username]);
 
     const dispatch = useDispatch();
+
+    const submitHandler = async (e) => {
+      e.preventDefault()
+      
+      if (password != confirmPassword) {
+        toast.error('Las contraseñas no coinciden.')
+      } else {
+        try {
+          const res = await updateProfile({
+            _id: userInfo._id, 
+            username, 
+            email, 
+            password
+          }).unwrap()
+          dispatch(setCredientials({ ...res }));
+          toast.success("Perfil actualizado");
+        } catch (error) {
+          toast.error(error?.data?.message || error.message);
+        }
+      }
+    };
     
     return (
     <div className="container mx-auto p-4 mt-[10rem]">
@@ -32,7 +53,7 @@ const Profile = () => {
                 Actualizar perfil
             </h2>
 
-            <form>
+            <form onSubmit={submitHandler}>
                 <div className="mb-4">
                     <label className="block text-white mb-2">Nombre</label>
                     <input
@@ -86,12 +107,11 @@ const Profile = () => {
                 <Link to='/users-orders' className="bg-pink-600 text-white py-2 px-4 rounded hover:bg-pink-700"
                 >
                   My Orders
-                </Link>
-                
+                </Link>    
               </div>
-
+              {loadingUpdateProfile && <Loader />}
             </form>
-            </div>
+          </div>
         </div>
     </div>
   );

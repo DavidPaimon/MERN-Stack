@@ -53,25 +53,25 @@ const Navigation = () => {
             <Link to='/' className="flex items-center transition-transform transform hover:translate-x-2"
             >
                 <AiOutlineHome className="mr-2 mt-[3rem]" size={26} />
-                <span className="hidden nav-item-name mt-[3rem]">HOME</span>{" "}
+                <span className="hidden nav-item-name mt-[3rem]">Inicio</span>{" "}
             </Link>
 
             <Link to='/shop' className="flex items-center transition-transform transform hover:translate-x-2"
             >
                 <AiOutlineShopping className="mr-2 mt-[3rem]" size={26} />
-                <span className="hidden nav-item-name mt-[3rem]">SHOP</span>{" "}
+                <span className="hidden nav-item-name mt-[3rem]">Tienda</span>{" "}
             </Link>
 
             <Link to='/cart' className="flex items-center transition-transform transform hover:translate-x-2"
             >
                 <AiOutlineShoppingCart className="mr-2 mt-[3rem]" size={26} />
-                <span className="hidden nav-item-name mt-[3rem]">CART</span>{" "}
+                <span className="hidden nav-item-name mt-[3rem]">Carrito</span>{" "}
             </Link>
 
             <Link to='/favorite' className="flex items-center transition-transform transform hover:translate-x-2"
             >
                 <FaHeart className="mr-2 mt-[3rem]" size={26} />
-                <span className="hidden nav-item-name mt-[3rem]">FAVORITES</span>{" "}
+                <span className="hidden nav-item-name mt-[3rem]">Favoritos</span>{" "}
             </Link>
         </div>
 
@@ -126,7 +126,7 @@ const Navigation = () => {
                              to='/admin/productlist' 
                              className="block px-4 py-1 hover:bg-gray-300"
                             >
-                              Products
+                              Productos
                             </Link>
                           </li>
                           <li>
@@ -134,7 +134,7 @@ const Navigation = () => {
                              to='/admin/categorylist' 
                              className="block px-4 py-1 hover:bg-gray-300"
                             >
-                              Category
+                              Categorías
                             </Link>
                           </li>
                           <li>
@@ -142,7 +142,7 @@ const Navigation = () => {
                              to='/admin/orderlist' 
                              className="block px-4 py-1 hover:bg-gray-300"
                             >
-                              Orders
+                              Pedidos
                             </Link>
                           </li>
                           <li>
@@ -150,7 +150,7 @@ const Navigation = () => {
                              to='/admin/userlist' 
                              className="block px-4 py-1 hover:bg-gray-300"
                             >
-                              Users
+                              Usuarios
                             </Link>
                           </li>
                         </>
@@ -161,7 +161,7 @@ const Navigation = () => {
                          to='/profile' 
                          className="block px-4 py-1 hover:bg-gray-300"
                         >
-                          Profile
+                          Perfil
                         </Link>
                         </li>
                         <li>
@@ -170,7 +170,7 @@ const Navigation = () => {
                             onClick={logoutHandler}
                             className="block px-4 py-1 hover:bg-gray-300"
                           >
-                          Logout
+                          Cerrar sesión
                           </button>
                         </li>
                 </ul>
@@ -181,7 +181,7 @@ const Navigation = () => {
                 <Link to='/login' className="flex items-center transition-transform transform hover:translate-x-2"
                 >
                     <AiOutlineLogin className="mr-2 mt-[3rem]" size={26} />
-                    <span className="hidden nav-item-name mt-[3rem]">Login</span>{" "}
+                    <span className="hidden nav-item-name mt-[3rem]">Inicia sesión</span>{" "}
                 </Link>
                 </li>
     
@@ -189,7 +189,7 @@ const Navigation = () => {
                 <Link to='/register' className="flex items-center transition-transform transform hover:translate-x-2"
                 >
                     <AiOutlineUserAdd className="mr-2 mt-[3rem]" size={26} />
-                    <span className="hidden nav-item-name mt-[3rem]">Register</span>{" "}
+                    <span className="hidden nav-item-name mt-[3rem]">Registrate</span>{" "}
                 </Link>
                 </li>
             </ul>

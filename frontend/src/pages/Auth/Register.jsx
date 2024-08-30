@@ -48,61 +48,61 @@ const Register = () => {
         };
 
     return (
-    <section className="pl-[10rem] flex flex-wrap">
+    <section className="pl-[10rem] mt-20 flex flex-wrap">
         <div className="mr-[4rem] mt-[5rem}">
-            <h1 className="text-2xl font-semibold mb-4">
-                Register
+            <h1 className="text-2xl text-center font-semibold mb-4">
+                Registrate
             </h1>
 
-            <form onSubmit={submitHandler} className="container w-[40rem]">
+            <form onSubmit={submitHandler} className="container w-[24rem]">
                 <div className="my-[2rem]">
                     <label htmlFor="name" className="block text-sm font-medium text-white">
-                        Nombre
+                        {/* Nombre */}
                     </label>
                     <input 
                         type="text" 
                         id='name' 
-                        className="mt-1 p-2 border rounded w-full"
-                        placeholder="¿Cómo quiere ser llamado?"
+                        className="mt-1 text-center p-2 border rounded w-full"
+                        placeholder="Ingresa tu nombre de usuario"
                         value={username}
                         onChange={e => setUserName(e.target.value)}
                     />
                 </div>
                 <div className="my-[2rem]">
                     <label htmlFor="email" className="block text-sm font-medium text-white">
-                        Correo electrónico
+                        {/* Correo electrónico */}
                     </label>
                     <input 
                         type="email" 
                         id='email' 
-                        className="mt-1 p-2 border rounded w-full"
-                        placeholder="example@gmail.com"
+                        className="mt-1 text-center p-2 border rounded w-full"
+                        placeholder="Ingresa un correo electrónico válido"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="my-[2rem]">
                     <label htmlFor="password" className="block text-sm font-medium text-white">
-                        Contraseña
+                        {/* Contraseña */}
                     </label>
                     <input 
                         type="password" 
                         id='password' 
-                        className="mt-1 p-2 border rounded w-full"
-                        placeholder="Digite su contraseña: "
+                        className="mt-1 text-center p-2 border rounded w-full"
+                        placeholder="Ingresa tu contraseña"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
                 </div>
                 <div className="my-[2rem]">
                     <label htmlFor="confirmPassword" className="block text-sm font-medium text-white">
-                        Confirme su contraseña
+                        {/* Confirme su contraseña */}
                     </label>
                     <input 
                         type="password" 
                         id='confirmPassword' 
-                        className="mt-1 p-2 border rounded w-full"
-                        placeholder="Confirme su contraseña"
+                        className="mt-1 text-center p-2 border rounded w-full"
+                        placeholder="Confirma tu contraseña"
                         value={confirmPassword}
                         onChange={e => setConfirmPassword(e.target.value)}
                     />
@@ -131,7 +131,7 @@ const Register = () => {
     <img
         src="https://images.unsplash.com/photo-1576502200916-3808e07386a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80"
         alt=""
-        className="h-[42rem] w-[46%] xl:block md:hidden sm:hidden rounded-lg"
+        className="ml-auto mr-48 mt-2 h-[32rem] w-[40%] xl:block md:hidden sm:hidden rounded-lg"
       />
     </section>
     )
